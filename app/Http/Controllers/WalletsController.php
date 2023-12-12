@@ -30,6 +30,7 @@ class WalletsController extends Controller
             Wallet::create([
                 'user_id' => $user->id
             ]);
+            return back();
         }
     }
 
