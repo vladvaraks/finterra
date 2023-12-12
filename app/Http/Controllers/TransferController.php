@@ -39,7 +39,7 @@ class TransferController extends Controller
             TransferJob::dispatch($transfer);
         }
 
-        return back();
+        return back()->with('message_success',"Перевод отправлен в обработку!");;
         
 
     }
