@@ -30,7 +30,6 @@ class WalletsController extends Controller
             Wallet::create([
                 'user_id' => $user->id
             ]);
-            return redirect()->back();
         }
     }
 
@@ -48,7 +47,8 @@ class WalletsController extends Controller
         $wallet->update([
             'balance' => $result
         ]);
-
-        return redirect()->route('wallets');
+        
+        return redirect()->route('wallets')
+                        ->with('message_success',"Вы успешно пополнили кошелёк!");
     }
 }
