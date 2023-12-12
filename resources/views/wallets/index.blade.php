@@ -6,6 +6,12 @@
             {{ $message }}
         </div>
     @enderror
+    @if(session('message_success'))
+        <div class="p-4 mb-4 text-center text-2xl text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+            role="alert">
+            {{ session('message_success') }}
+        </div>
+    @enderror
     <div class="flex flex-col xl:flex-row">
         @foreach ($wallets as $wallet)
             <div
